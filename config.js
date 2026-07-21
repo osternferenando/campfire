@@ -15,7 +15,7 @@ const CONFIG = {
   // After you deploy to Vercel, paste your URL here
   // Example: 'https://campfire-backend.vercel.app'
   // ============================================
-  PROXY_URL: 'campfire-backend-cq63ecw0r-feraz.vercel.app',
+  PROXY_URL: 'https://campfire-backend-cq63ecw0r-feraz.vercel.app',
 
   // ============================================
   // FIREBASE CONFIG (public — safe to expose)
