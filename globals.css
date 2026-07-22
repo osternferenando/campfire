@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand — the ember, constant across both modes */
+  --color-ember-400: #ff8c5a;
+  --color-ember-500: #ff6a34;
+  --color-ember-600: #d93f0f;
+  --color-gold-400: #f2a73b;
+
+  /* Semantic surface tokens — light values are the defaults */
+  --color-bg: #f7f2ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #fbf6ee;
+  --color-ink: #241c14;
+  --color-ink-muted: #7a6c5a;
+  --color-line: rgb(36 28 20 / 8%);
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-card: 1.25rem;
+}
+
+.dark {
+  --color-bg: #15110d;
+  --color-surface: #201a13;
+  --color-surface-2: #2a2119;
+  --color-ink: #f5ece0;
+  --color-ink-muted: #a99783;
+  --color-line: rgb(245 236 224 / 9%);
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Signature: the ember breathes behind the mark — never static, never loud */
+@keyframes ember-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+.ember-glow {
+  background: radial-gradient(circle, var(--color-ember-500) 0%, var(--color-ember-600) 45%, transparent 72%);
+  filter: blur(32px);
+  animation: ember-breathe 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ember-glow { animation: none; opacity: 0.7; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ember-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
